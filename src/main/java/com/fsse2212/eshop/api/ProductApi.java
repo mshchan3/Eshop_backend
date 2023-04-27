@@ -31,7 +31,7 @@ public class ProductApi {
 //        }
 //        return dtoList;
 //    }
-
+    @GetMapping
     public String getAllProduct(){
         return "Fuck!!!!!!";
     }
