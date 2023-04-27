@@ -23,18 +23,15 @@ public class ProductApi {
         return new ProductResponseDtoHasStock(productService.addProduct(new CreateProductData(dto)));
     }
 
-//    @GetMapping
-//    public List<ProductResponseDtoHasStock> getAllProduct(){
-//        List<ProductResponseDtoHasStock> dtoList = new ArrayList<>();
-//        for (ProductDataHasStock data : productService.getAllProduct()) {
-//            dtoList.add(new ProductResponseDtoHasStock(data));
-//        }
-//        return dtoList;
-//    }
     @GetMapping
-    public String getAllProduct(){
-        return "Fuck!!!!!!";
+    public List<ProductResponseDtoHasStock> getAllProduct(){
+        List<ProductResponseDtoHasStock> dtoList = new ArrayList<>();
+        for (ProductDataHasStock data : productService.getAllProduct()) {
+            dtoList.add(new ProductResponseDtoHasStock(data));
+        }
+        return dtoList;
     }
+
 
     @GetMapping("/{pid}")
     public ProductResponseDto getProductById(@PathVariable Integer pid){
